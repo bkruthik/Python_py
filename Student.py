@@ -8,6 +8,7 @@ conn = mysql.connector.connect(
     database="student_db"
 )
 
+
 cursor = conn.cursor()
 def add_student():
     name = input("Enter name: ")
