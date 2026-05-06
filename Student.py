@@ -41,8 +41,6 @@ def add_marks():
     query = "INSERT INTO results (student_id, subject_id, marks) VALUES (%s, %s, %s)"
     cursor.execute(query, (student_id, subject_id, marks))
     conn.commit()
-
-
     print("Marks added")
 
 
