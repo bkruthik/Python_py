@@ -1,6 +1,7 @@
 import mysql.connector
 
 # Connect to MySQL
+
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -26,11 +27,13 @@ def view_students():
     cursor.execute("SELECT * FROM students")
     for row in cursor.fetchall():
         print(row)
+        
 
 def add_marks():
     student_id = int(input("Student ID: "))
     print("Math(1) Science(2) English(3) Physics(4) Chemistry(5)")
     subject_id = int(input("Subject ID (1-5): "))
+    
 
     if subject_id not in range(1, 6):
         print("Invalid Subject ID. Please enter 1–5")
@@ -64,6 +67,7 @@ def calculate_result():
     cursor.execute(query, (student_id,))
 
     marks = [i[0] for i in cursor.fetchall()]
+    
 
     if not marks:
         print("No marks found")
